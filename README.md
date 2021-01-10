@@ -17,9 +17,9 @@ Repository Contents:
 
 I am going to use [minikube](https://minikube.sigs.k8s.io/docs/start/) in multi-node clusters to show how to safely evict pods.
 
-> You can deploy it to other cloud managed kubernetes like AWS or GKE.
+> You can deploy it to other cloud managed kubernetes like AWS or GKE with no changes to yaml files.
 
-To start minikube with two nodes you can run 
+To start minikube with three nodes you can run 
 
 ```bash
 minikube start --nodes 3 -p multinode-cluster
@@ -111,7 +111,7 @@ By running the above command you can see by the logs that not all pods get insta
 
 <div align=center>
 
-This repository is part of an article you can find [here]()
+This repository is part of an article you can find [here](https://dev.to/gkampitakis/kubernetes-node-drain-by-example-3l28)
 
 </div>
 
