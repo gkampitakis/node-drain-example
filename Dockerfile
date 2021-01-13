@@ -1,15 +1,17 @@
-FROM node:alpine
+FROM node:lts-alpine
+
+RUN apk add dumb-init
 
 WORKDIR /app
 
-COPY package.json . 
+COPY --chown=node:node package* ./  
 
-RUN npm i 
+RUN npm ci --only=production
 
-COPY . .
+COPY --chown=node:node . .
 
 EXPOSE 4000
 
 USER node
 
-CMD node index.js
+CMD ["dumb-init", "node", "index.js"]
